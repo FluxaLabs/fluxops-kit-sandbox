@@ -20,6 +20,6 @@ jobs:
         run: npm test
       # --- Security additions ---
       - name: Generate SBOM
-        uses: CycloneDX/gh-node-module-bom@v2.0.1
+        uses: anchore/sbom-action@v0
       - name: Upload provenance (SLSA)
-        uses: slsa-framework/slsa-github-generator@v1.10.0
+        uses: slsa-framework/slsa-github-generator@v2
