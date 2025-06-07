@@ -56,13 +56,13 @@ jobs:
           vuln-type: 'os,library'
 
       # SBOM + provenance
-      - name: Generate CycloneDX SBOM
-        uses: CycloneDX/gh-docker-sbom@v1.0.0
+      - name: Generate SBOM
+        uses: CycloneDX/gh-node-module-bom@v2.0.1
         with:
           image: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
 
       - name: Upload provenance (SLSA)
-        uses: slsa-framework/slsa-github-generator@v2
+        uses: slsa-framework/slsa-github-generator@v1.10.0
         with:
           artifact-path: ghcr.io/${{ github.repository }}:${{ github.ref_name }}
 
